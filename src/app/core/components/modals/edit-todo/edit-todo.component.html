@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>
+  <div class="close"><button (click)="close()" type="button"  data-dismiss="modal"
+                             ng-click="$dismiss()" aria-hidden="true">&times;</button>
+  </div>
+
+  <b>Edit current todo: </b> {{ modalData.title }}</h1>
+
+<div mat-card-content>
+  <app-text-input [textControl]="formGroup.get('title')"></app-text-input>
+  <app-date-picker [control]="formGroup.get('deadLineDate')" [label]="'DeadLine Date'"></app-date-picker>
+</div>
+<div mat-dialog-actions>
+  <app-button (click)="close()" [buttonText]="'Cancel'" [buttonColor]="'warn'"></app-button>
+  <app-button (click)="formGroup.valid ? saveChanges() : null" [buttonText]="'Save changes'" ></app-button>
+</div>

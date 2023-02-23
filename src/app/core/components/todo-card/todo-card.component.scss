@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+
+  &_pencil, &_delete {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &_date {
+    display: flex;
+    align-items: center;
+
+    & h5:first-child {
+      margin-right: 5px;
+    }
+  }
+
+  &.finished {
+    background: #888888;
+
+    & .card_text {
+      text-decoration: line-through;
+    }
+  }
+
+  &_pencil {
+    mix-blend-mode: color-burn;
+  }
+}
+
+
+
+::ng-deep .mat-card {
+  background: #12cad3;
+  border: 1px solid #000000;
+}

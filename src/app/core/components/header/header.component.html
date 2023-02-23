@@ -1,0 +1,28 @@
+<div class="header">
+  <h1 class="header_title">TO DO List</h1>
+
+  <div class="header_block">
+    <div class="header_btn">
+      <app-button (click)="getAll()" [buttonText] = "'All'" [buttonColor]="'primary'"></app-button>
+      <app-button (click)="statusActive()" [buttonText]="'ACTIVE'" [buttonColor]="'accent'"></app-button>
+      <app-button (click)="getFinished()" [buttonText]="'FINISH'" [buttonColor]="'warn'"></app-button>
+
+    </div>
+  </div>
+
+    <div class="header_selector">
+      <app-select (sortTodo)="onSortTodo($event)" ></app-select>
+    </div>
+
+  <div class="header_creation">
+    <h4 class="text">Create new Task: </h4>
+    <div class="header_control">
+    <app-text-input [textControl]="todoControl"></app-text-input>
+      <app-button
+        (click)="todoControl.valid ? createTodo() : null"
+        [buttonText]="'Create'"
+        [buttonColor]="'primary'"
+      ></app-button>
+    </div>
+  </div>
+</div>

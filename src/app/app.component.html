@@ -1,0 +1,16 @@
+<app-header
+  (updateEvent)="handleUpdate($event)"
+  (onFilterTodo)="onFilterTodo($event)"
+  (onSortTodoFromHeader)="onSortByType($event)"
+></app-header>
+  <div class="container">
+    <app-todo-card
+      *ngFor="let todo of todoList; index as idx"
+      [todoCard]="todo"
+      [cardNumber]="idx + 1"
+      (changeTodoStatus)="changeTodoStatus(todo)"
+      (deleteTodoEvent)="deleteTodo(todo)"
+      (editTodoEvent)="editTodo(todo)"
+    ></app-todo-card>
+  </div>
+

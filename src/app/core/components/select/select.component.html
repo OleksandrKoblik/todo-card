@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-label>Sort</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="sortType">
+    <mat-option (click)="sortBy(sortType.value)" *ngFor="let sortType of sortTypes" [value]="sortType.value">
+      {{sortType.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
